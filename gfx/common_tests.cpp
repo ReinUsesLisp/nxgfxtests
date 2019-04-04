@@ -55,6 +55,7 @@ bool SinglePixelTest(const char* pixel_shader_glsl, float expected_value, SetupC
     if (pixel != expected_value) {
         fprintf(stderr, "Expected %f but got %f\n", expected_value, pixel);
     }
+
     return pixel == expected_value;
 }
 

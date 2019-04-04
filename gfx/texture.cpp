@@ -36,7 +36,7 @@ Texture::~Texture() {
     ctx.DeleteTextures(1, &handle);
 }
 
-void Texture::Bind(int index) const {
+void Texture::BindTexture(int index) const {
     ctx.BindTextureUnit(index, handle);
 }
 

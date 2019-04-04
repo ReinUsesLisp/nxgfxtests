@@ -21,7 +21,7 @@ public:
     Texture(const Texture&) = delete;
     ~Texture();
 
-    void Bind(int index = 0) const;
+    void BindTexture(int index = 0) const;
 
     GLuint GetHandle() const {
         return handle;
