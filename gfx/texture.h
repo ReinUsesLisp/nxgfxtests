@@ -23,6 +23,16 @@ public:
 
     void BindTexture(int index = 0) const;
 
+    void Upload(GLint level, GLint xoffset, GLsizei width, GLenum format, GLenum type,
+                const void* pixels) const;
+    void Upload(GLint level, GLint xoffset, GLint yoffset, GLsizei width, GLsizei height,
+                GLenum format, GLenum type, const void* pixels) const;
+    void Upload(GLint level, GLint xoffset, GLint yoffset, GLint zoffset, GLsizei width,
+                GLsizei height, GLsizei depth, GLenum format, GLenum type,
+                const void* pixels) const;
+
+    GLuint64 GetBindlessHandle() const;
+
     GLuint GetHandle() const {
         return handle;
     }

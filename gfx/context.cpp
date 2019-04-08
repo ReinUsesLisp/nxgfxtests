@@ -102,7 +102,18 @@ void Context::InitializeFunctionPointers() {
     GetProc(TextureStorage1D, "glTextureStorage1D");
     GetProc(TextureStorage2D, "glTextureStorage2D");
     GetProc(TextureStorage3D, "glTextureStorage3D");
+    GetProc(TextureSubImage1D, "glTextureSubImage1D");
+    GetProc(TextureSubImage2D, "glTextureSubImage2D");
+    GetProc(TextureSubImage3D, "glTextureSubImage3D");
     GetProc(BindTextureUnit, "glBindTextureUnit");
+    GetProc(GetTextureHandle, "glGetTextureHandleARB");
+    GetProc(MakeTextureHandleResident, "glMakeTextureHandleResidentARB");
+
+    GetProc(CreateBuffers, "glCreateBuffers");
+    GetProc(DeleteBuffers, "glDeleteBuffers");
+    GetProc(NamedBufferData, "glNamedBufferData");
+    GetProc(NamedBufferSubData, "glNamedBufferSubData");
+    GetProc(BindBufferBase, "glBindBufferBase");
 
     GetProc(CreateShaderProgramv, "glCreateShaderProgramv");
     GetProc(DeleteProgram, "glDeleteProgram");
@@ -110,6 +121,7 @@ void Context::InitializeFunctionPointers() {
     GetProc(GetProgramInfoLog, "glGetProgramInfoLog");
     GetProc(ProgramUniform1f, "glProgramUniform1f");
     GetProc(ProgramUniform1i, "glProgramUniform1i");
+    GetProc(ProgramUniform1ui64, "glProgramUniform1ui64ARB");
 
     GetProc(CreateProgramPipelines, "glCreateProgramPipelines");
     GetProc(DeleteProgramPipelines, "glDeleteProgramPipelines");
@@ -130,7 +142,7 @@ template <typename PFN>
 void Context::GetProc(PFN& pfn, const char* function_name) {
     pfn = reinterpret_cast<PFN>(eglGetProcAddress(function_name));
     if (pfn == nullptr) {
-        fprintf(stderr, "Failed to get OpenGL proc \"%s\"", function_name);
+        fprintf(stderr, "Failed to get OpenGL proc \"%s\"\n", function_name);
         std::abort();
     }
 }

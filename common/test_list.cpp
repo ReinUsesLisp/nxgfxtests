@@ -19,8 +19,10 @@ void RunTests() {
     std::vector<std::string> failed_tests;
     for (const auto pair : s_tests) {
         const auto& [name, pfn] = pair;
-        const bool success = pfn();
-        fprintf(stderr, "Test %s: %s\n", name.c_str(), success ? "Success" : "Failure");
+        fprintf(stderr, "%s begin\n", name.c_str());
+
+        const bool success{pfn()};
+        fprintf(stderr, "%s result: %s\n", name.c_str(), success ? "Success" : "Failure");
         if (!success) {
             failed_tests.push_back(name);
         }

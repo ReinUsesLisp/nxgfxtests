@@ -40,4 +40,25 @@ void Texture::BindTexture(int index) const {
     ctx.BindTextureUnit(index, handle);
 }
 
+void Texture::Upload(GLint level, GLint xoffset, GLsizei width, GLenum format, GLenum type,
+                     const void* pixels) const {
+    ctx.TextureSubImage1D(handle, level, xoffset, width, format, type, pixels);
+}
+
+void Texture::Upload(GLint level, GLint xoffset, GLint yoffset, GLsizei width, GLsizei height,
+                     GLenum format, GLenum type, const void* pixels) const {
+    ctx.TextureSubImage2D(handle, level, xoffset, yoffset, width, height, format, type, pixels);
+}
+
+void Texture::Upload(GLint level, GLint xoffset, GLint yoffset, GLint zoffset, GLsizei width,
+                     GLsizei height, GLsizei depth, GLenum format, GLenum type,
+                     const void* pixels) const {
+    ctx.TextureSubImage3D(handle, level, xoffset, yoffset, zoffset, width, height, depth, format,
+                          type, pixels);
+}
+
+GLuint64 Texture::GetBindlessHandle() const {
+    return ctx.GetTextureHandle(handle);
+}
+
 } // namespace Gfx
