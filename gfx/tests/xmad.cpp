@@ -18,7 +18,7 @@ void main() {
 }
 )";
 
-static AddTest test1{"XMAD(1)", Test<GLSL_1, 4, 64>};
-static AddTest test2{"XMAD(2)", Test<GLSL_1, 2, 8>};
-static AddTest test3{"XMAD(3)", Test<GLSL_1, -1, -1>};
-static AddTest test4{"XMAD(4)", Test<GLSL_1, -6, -216>};
+ADD_TEST("XMAD(1)", Test, GLSL_1, 4, 64);
+ADD_TEST("XMAD(2)", Test, GLSL_1, 2, 8);
+ADD_TEST("XMAD(3)", Test, GLSL_1, -1, -1);
+ADD_TEST("XMAD(4)", Test, GLSL_1, -6, -216);

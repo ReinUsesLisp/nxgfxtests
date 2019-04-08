@@ -13,4 +13,4 @@ static bool Test() {
     return Gfx::SinglePixelTest(PIXEL_SHADER, 0.125f);
 }
 
-static AddTest test{"Constant", Test};
+ADD_TEST_FIXED("Constant", Test);

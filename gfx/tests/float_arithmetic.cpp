@@ -38,12 +38,12 @@ void main() {
 }
 )";
 
-static AddTest test1{"FADD(1)", Test<GLSL_1, 8, 16>};
-static AddTest test2{"FADD(2)", Test<GLSL_1, -8, -16>};
-static AddTest test3{"FADD(3)", Test<GLSL_2, 412, 0>};
-static AddTest test4{"FADD(4)", Test<GLSL_2, 836, 0>};
-static AddTest test5{"FADD(5)", Test<GLSL_2, -42314, 0>};
+ADD_TEST("FADD(1)", Test, GLSL_1, 8, 16);
+ADD_TEST("FADD(2)", Test, GLSL_1, -8, -16);
+ADD_TEST("FADD(3)", Test, GLSL_2, 412, 0);
+ADD_TEST("FADD(4)", Test, GLSL_2, 836, 0);
+ADD_TEST("FADD(5)", Test, GLSL_2, -42314, 0);
 
-static AddTest test6{"FMUL(6)", Test<GLSL_3, 3, 9>};
-static AddTest test7{"FMUL(7)", Test<GLSL_3, -3, 9>};
-static AddTest test8{"FMUL(8)", Test<GLSL_3, 60, 3600>};
+ADD_TEST("FMUL(6)", Test, GLSL_3, 3, 9);
+ADD_TEST("FMUL(7)", Test, GLSL_3, -3, 9);
+ADD_TEST("FMUL(8)", Test, GLSL_3, 60, 3600);

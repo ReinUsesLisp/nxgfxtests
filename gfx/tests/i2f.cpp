@@ -36,6 +36,6 @@ void main() {
 }
 )";
 
-static AddTest test1{"I2F.F32.S32(1)", Test<GLSL_1, 4, 4>};
-static AddTest test2{"I2F.F32.S32(2)", Test<GLSL_2, -6545, -6545>};
-static AddTest test3{"I2F.F32.S32(3)", Test<GLSL_3, 50000, -50000>};
+ADD_TEST("I2F.F32.S32(1)", Test, GLSL_1, 4, 4);
+ADD_TEST("I2F.F32.S32(2)", Test, GLSL_2, -6545, -6545);
+ADD_TEST("I2F.F32.S32(3)", Test, GLSL_3, 50000, -50000);

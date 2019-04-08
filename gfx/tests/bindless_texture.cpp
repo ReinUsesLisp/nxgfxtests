@@ -32,6 +32,6 @@ void main() {
 )";
 
 /*
-static AddTest test1{"TEXTURE.BINDLESS(1)", Test<GLSL_1, 4, 4>};
-static AddTest test2{"TEXTURE.BINDLESS(2)", Test<GLSL_1, 12, 12>};
+ADD_TEST("TEXTURE.BINDLESS(1)", Test, GLSL_1, 4, 4);
+ADD_TEST("TEXTURE.BINDLESS(2)", Test, GLSL_1, 12, 12);
 */
