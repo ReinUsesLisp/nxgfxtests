@@ -121,6 +121,7 @@ void Context::InitializeFunctionPointers() {
     GetProc(GetProgramInfoLog, "glGetProgramInfoLog");
     GetProc(ProgramUniform1f, "glProgramUniform1f");
     GetProc(ProgramUniform1i, "glProgramUniform1i");
+    GetProc(ProgramUniform1ui, "glProgramUniform1ui");
     GetProc(ProgramUniform1ui64, "glProgramUniform1ui64ARB");
 
     GetProc(CreateProgramPipelines, "glCreateProgramPipelines");
