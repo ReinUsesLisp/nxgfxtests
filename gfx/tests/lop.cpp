@@ -18,4 +18,4 @@ void main() {
 }
 )";
 
-ADD_TEST("LOP.AND", Test, LOP_AND, 105, 104);
+// ADD_TEST("LOP.AND", Test, LOP_AND, 105, 104);

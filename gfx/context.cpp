@@ -15,21 +15,9 @@
 
 namespace Gfx {
 
-constexpr EGLint FramebufferAttributeList[] = {EGL_RENDERABLE_TYPE,
-                                               EGL_OPENGL_BIT,
-                                               EGL_RED_SIZE,
-                                               8,
-                                               EGL_GREEN_SIZE,
-                                               8,
-                                               EGL_BLUE_SIZE,
-                                               8,
-                                               EGL_ALPHA_SIZE,
-                                               8,
-                                               EGL_DEPTH_SIZE,
-                                               24,
-                                               EGL_STENCIL_SIZE,
-                                               8,
-                                               EGL_NONE};
+constexpr EGLint FramebufferAttributeList[] = {
+    EGL_RED_SIZE,   8,  EGL_GREEN_SIZE,   8, EGL_BLUE_SIZE, 8, EGL_ALPHA_SIZE, 8,
+    EGL_DEPTH_SIZE, 24, EGL_STENCIL_SIZE, 8, EGL_NONE};
 
 constexpr EGLint GetProfile(Context::Profile profile) {
     switch (profile) {
@@ -42,20 +30,25 @@ constexpr EGLint GetProfile(Context::Profile profile) {
 }
 
 Context::Context(Profile profile, int major, int minor) {
+    [[maybe_unused]] EGLBoolean result{};
+    NWindow* const win = nwindowGetDefault();
+
     display = eglGetDisplay(EGL_DEFAULT_DISPLAY);
     assert(display);
 
-    eglInitialize(display, nullptr, nullptr);
+    result = eglInitialize(display, NULL, NULL);
+    assert(result == EGL_TRUE);
 
-    const EGLint result = eglBindAPI(EGL_OPENGL_API);
+    result = eglBindAPI(EGL_OPENGL_API);
     assert(result == EGL_TRUE);
 
     EGLConfig config;
     EGLint num_configs;
-    eglChooseConfig(display, FramebufferAttributeList, &config, 1, &num_configs);
+    result = eglChooseConfig(display, FramebufferAttributeList, &config, 1, &num_configs);
+    assert(result == EGL_TRUE);
     assert(num_configs > 0);
 
-    surface = eglCreateWindowSurface(display, config, nwindowGetDefault(), nullptr);
+    surface = eglCreateWindowSurface(display, config, win, nullptr);
     assert(surface);
 
     const EGLint context_attr_list[] = {EGL_CONTEXT_OPENGL_PROFILE_MASK_KHR,
@@ -68,9 +61,12 @@ Context::Context(Profile profile, int major, int minor) {
     context = eglCreateContext(display, config, EGL_NO_CONTEXT, context_attr_list);
     assert(context);
 
-    eglMakeCurrent(display, surface, surface, context);
+    result = eglMakeCurrent(display, surface, surface, context);
+    assert(result == EGL_TRUE);
 
     InitializeFunctionPointers();
+
+    fprintf(stderr, "Success!\n");
 }
 
 Context::~Context() {

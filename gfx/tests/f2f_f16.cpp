@@ -36,7 +36,7 @@ void main() {
 }
 )";
 
-ADD_TEST("F2F.F16(1)", Test, GLSL_1, 4, 8, 4);
-ADD_TEST("F2F.F16(2)", Test, GLSL_1, -12, 8, -12);
-ADD_TEST("F2F.F16(3)", Test, GLSL_1, 8, 13, 13);
-ADD_TEST("F2F.F16(4)", Test, GLSL_1, 8, -2, -2);
+// ADD_TEST("F2F.F16(1)", Test, GLSL_1, 4, 8, 4);
+// ADD_TEST("F2F.F16(2)", Test, GLSL_1, -12, 8, -12);
+// ADD_TEST("F2F.F16(3)", Test, GLSL_1, 8, 13, 13);
+// ADD_TEST("F2F.F16(4)", Test, GLSL_1, 8, -2, -2);

@@ -45,6 +45,8 @@ Shader::Shader(const Context& ctx, Type type, const std::string& code) : ctx{ctx
         std::string log(static_cast<std::size_t>(log_length), ' ');
         ctx.GetProgramInfoLog(handle, static_cast<GLsizei>(log_length), nullptr, log.data());
         std::fputs(log.c_str(), stderr);
+
+        std::fputs(code.c_str(), stderr);
     }
 
     GLint link_status = GL_FALSE;

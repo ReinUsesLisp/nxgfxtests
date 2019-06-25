@@ -44,7 +44,7 @@ static std::string GLSL_6 = GenerateGLSL("uint", "bitfieldExtract(value, 24, 8)"
 
 static std::string GLSL_7 = GenerateGLSL("uint", "bitfieldExtract(value, 0, 16)");
 static std::string GLSL_8 = GenerateGLSL("uint", "bitfieldExtract(value, 16, 16)");
-
+/*
 ADD_TEST("I2F.F32.S32(1)", TestS32, GLSL_1, 4, 4);
 ADD_TEST("I2F.F32.S32(2)", TestS32, GLSL_1, -6545, -6545);
 ADD_TEST("I2F.F32.S32(3)", TestS32, GLSL_2, 50000, -50000);
@@ -56,3 +56,4 @@ ADD_TEST("I2F.F32.U8(4)", TestU32, GLSL_6, 0xAABBCCDDu, 0xAAu); // B3
 
 ADD_TEST("I2F.F32.U16(1)", TestU32, GLSL_7, 0xAABBCCDDu, 0xCCDDu); // H0
 ADD_TEST("I2F.F32.U16(2)", TestU32, GLSL_8, 0xAABBCCDDu, 0xAABBu); // H1
+*/

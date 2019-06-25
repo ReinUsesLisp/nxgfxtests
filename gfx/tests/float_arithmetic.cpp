@@ -37,7 +37,7 @@ void main() {
     pixel = value * value;
 }
 )";
-
+/*
 ADD_TEST("FADD(1)", Test, GLSL_1, 8, 16);
 ADD_TEST("FADD(2)", Test, GLSL_1, -8, -16);
 ADD_TEST("FADD(3)", Test, GLSL_2, 412, 0);
@@ -47,3 +47,4 @@ ADD_TEST("FADD(5)", Test, GLSL_2, -42314, 0);
 ADD_TEST("FMUL(6)", Test, GLSL_3, 3, 9);
 ADD_TEST("FMUL(7)", Test, GLSL_3, -3, 9);
 ADD_TEST("FMUL(8)", Test, GLSL_3, 60, 3600);
+*/

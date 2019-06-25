@@ -53,9 +53,10 @@ void main() {
     pixel = textureQueryLevels(img);
 }
 )";
-
+/*
 ADD_TEST("TXQ.DIM(1)", Test2D, GLSL_1, 256);
 ADD_TEST("TXQ.DIM(2)", Test2D, GLSL_2, 512);
 ADD_TEST("TXQ.DIM(3)", Test2D, GLSL_3, 128);
 ADD_TEST("TXQ.DIM(4)", Test2D, GLSL_4, 256);
 ADD_TEST("TXQ.LEVELS", Test2D, GLSL_5, 8);
+*/

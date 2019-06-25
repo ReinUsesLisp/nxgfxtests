@@ -17,4 +17,4 @@ static bool Test() {
     return Gfx::SinglePixelTest(PIXEL_SHADER, value, callback);
 }
 
-ADD_TEST_FIXED("Uniform", Test);
+// ADD_TEST_FIXED("Uniform", Test);

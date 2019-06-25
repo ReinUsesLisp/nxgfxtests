@@ -43,7 +43,7 @@ void main() {
     pixel = trunc(value);
 }
 )";
-
+/*
 ADD_TEST("F2F.FLOOR(1)", Test, GLSL_1, 43, 4);
 ADD_TEST("F2F.FLOOR(2)", Test, GLSL_1, 49, 4);
 ADD_TEST("F2F.FLOOR(3)", Test, GLSL_1, -13, -2);
@@ -65,3 +65,4 @@ ADD_TEST("F2F.TRUNC(2)", Test, GLSL_4, 49, 4);
 ADD_TEST("F2F.TRUNC(3)", Test, GLSL_4, -13, -1);
 ADD_TEST("F2F.TRUNC(4)", Test, GLSL_4, 80, 8);
 ADD_TEST("F2F.TRUNC(5)", Test, GLSL_4, -19, -1);
+*/

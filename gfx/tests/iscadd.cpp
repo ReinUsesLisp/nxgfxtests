@@ -18,7 +18,8 @@ void main() {
     pixel = (value1 << 3) + value2;
 }
 )";
-
+/*
 ADD_TEST("ISCADD(1)", Test, GLSL_1, 2, 6, 22);
 ADD_TEST("ISCADD(2)", Test, GLSL_1, 0, 6, 6);
 ADD_TEST("ISCADD(3)", Test, GLSL_1, 8, 17, 81);
+*/
